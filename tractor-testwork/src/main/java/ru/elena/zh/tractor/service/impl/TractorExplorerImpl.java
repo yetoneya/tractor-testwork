@@ -22,13 +22,14 @@ public class TractorExplorerImpl implements TractorExplorer {
     }
 
     @Override
-    public void moveForwards() {
+    public Tractor moveForwards() {
         tractor.moveForwards();
         checkPosition();
+        return tractor;
     }
 
     @Override
-    public void moveBackword() {
+    public Tractor moveBackword() {
         tractor.turnClockwise();
         tractor.turnClockwise();
         tractor.moveForwards();
@@ -37,6 +38,7 @@ public class TractorExplorerImpl implements TractorExplorer {
             tractor.turnClockwise();
             tractor.turnClockwise();
         }
+        return tractor;
     }
 
     @Override
@@ -56,7 +58,8 @@ public class TractorExplorerImpl implements TractorExplorer {
             try {
                 throw new TractorInDitchException("the tractor is in the ditch");
             } catch (TractorInDitchException ex) {
-                System.out.println(ex.getMessage());               
+                System.out.println(ex.getMessage());
+                tractor = null;
             }
         }
     }
