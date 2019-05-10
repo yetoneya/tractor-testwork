@@ -2,9 +2,9 @@ package ru.elena.zh.tractor.service;
 
 public interface TractorExplorer {
 
-    void moveForwards();
+    Tractor moveForwards();
 
-    void moveBackword();
+    Tractor moveBackword();
 
     void turnClockwise();
 
