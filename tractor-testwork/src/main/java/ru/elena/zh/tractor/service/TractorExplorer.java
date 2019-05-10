@@ -6,8 +6,8 @@ public interface TractorExplorer {
 
     void moveBackword();
 
-    public void turnClockwise();
+    void turnClockwise();
 
-    public void turnContraClockwise();
+    void turnContraClockwise();
 
 }
