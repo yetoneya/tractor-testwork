@@ -32,8 +32,11 @@ public class TractorExplorerImpl implements TractorExplorer {
         tractor.turnClockwise();
         tractor.turnClockwise();
         tractor.moveForwards();
-        tractor.turnClockwise();
-        tractor.turnClockwise();
+        checkPosition();
+        if(tractor != null){
+            tractor.turnClockwise();
+            tractor.turnClockwise();
+        }
     }
 
     @Override
