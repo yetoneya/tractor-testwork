@@ -13,7 +13,7 @@ public class TractorExplorerImplTest {
         System.out.println("moveForwards");
         Tractor tractor = new TractorImpl();
         TractorExplorer te = new TractorExplorerImpl(4, 4, tractor);
-        te.moveForwards();
+        tractor = te.moveForwards();
         assertEquals(tractor.getPositionY(), 1);
     }
 
@@ -40,10 +40,21 @@ public class TractorExplorerImplTest {
         System.out.println("moveBackward");
         Tractor tractor = new TractorImpl();
         TractorExplorer te = new TractorExplorerImpl(4, 4, tractor);
-        te.moveForwards();
-        te.moveBackword();
+        tractor = te.moveForwards();
+        tractor = te.moveBackword();
         assertEquals(tractor.getPositionY(), 0);
         assertEquals(tractor.getOrientation(), "N");
+    }
+    
+    @Test
+    public void testTractorInDitch() {
+        System.out.println("tractorInDitch");
+        Tractor tractor = new TractorImpl();
+        TractorExplorer te = new TractorExplorerImpl(4, 4, tractor);
+        tractor = te.moveForwards();
+        tractor = te.moveBackword();
+        tractor = te.moveBackword();
+        assertEquals(tractor, null);
     }
 
 }
