@@ -56,8 +56,7 @@ public class TractorExplorerImpl implements TractorExplorer {
             try {
                 throw new TractorInDitchException("the tractor is in the ditch");
             } catch (TractorInDitchException ex) {
-                System.out.println(ex.getMessage());
-                tractor = null;
+                System.out.println(ex.getMessage());               
             }
         }
     }
